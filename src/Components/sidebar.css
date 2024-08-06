@@ -1,0 +1,30 @@
+.sidebar {
+    width: 200px;
+    height: 80vh; /* Full viewport height */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    padding-left: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul li a {
+    font-size: 18px;
+    color: #007bff; /* Bootstrap primary color */
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .sign-out {
+    margin-top: 50vh;
+  }
+  
