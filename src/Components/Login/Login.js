@@ -22,6 +22,7 @@ const Login = () => {
   };
 
   return (
+    <div className='log-in'>
     <div className="login-container">
       <h2>Login</h2>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
@@ -51,6 +52,7 @@ const Login = () => {
           </Form>
         )}
       </Formik>
+    </div>
     </div>
   );
 };
