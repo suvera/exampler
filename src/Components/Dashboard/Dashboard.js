@@ -1,15 +1,17 @@
 import React from 'react';
-import Sidebar from '../Sidebar';
+import Layout from '../Layout';
 
 function Dashboard() {
   return (
-    <div className="d-flex">
-    <Sidebar />
-    <div className="flex-grow-1 p-4">
+    <Layout>
+    <div className="d-flex flex-col p-1">
+   
+
       <h1>Dashboard</h1>
    
-    </div>
+
   </div>
+  </Layout>
   )
 }
 

@@ -1,3 +1,10 @@
+.log-in {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
 .login-container {
     width: 400px;
     margin: 50px auto;

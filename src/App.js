@@ -20,10 +20,10 @@ if(sessionStorage.getItem("token")){
   console.log(token)
   return (
   <div className="App">
-    <Header />
+    
     <div className="d-flex">
 
-      <div className={`content ${token ? 'flex-grow-1 p-4 pt-0' : 'w-100 p-4'}`}>
+      <div className={`content ${token ? 'flex-grow-1 pt-0' : 'w-100 h-100'}`}>
       <RouterProvider  router={token ? appRoutes : authRoutes} />
      </div>
      </div>
