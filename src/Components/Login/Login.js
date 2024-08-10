@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import { api } from '../../api/api';
 import './login.css';
 
 const Login = () => {
@@ -8,18 +10,48 @@ const Login = () => {
     username: '',
     password: '',
   };
-
+const navigate = useNavigate();
   const validationSchema = Yup.object({
     username: Yup.string().required('Username is required'),
     password: Yup.string().required('Password is required'),
   });
 
-  const onSubmit = (values, { setSubmitting }) => {
-    console.log('Form data', values);
-    setSubmitting(false);
-    sessionStorage.setItem("token", JSON.stringify(values))
-    window.location.reload();
-  };
+  const onSubmit = async (params) => {
+    try {
+        const headers = new Headers();
+        headers.append("Content-Type", "application/x-www-form-urlencoded");
+
+        // Convert params object to URL-encoded string
+        const urlEncodedData = new URLSearchParams(params).toString();
+
+        const requestOptions = {
+            method: "POST",
+            headers: headers,
+            body: urlEncodedData,
+        };
+
+        const response = await fetch(api.endpoints.auth.login, requestOptions);
+        if (response.ok) { 
+            const responseData = await response.json();
+            console.log(responseData); 
+            const { statusCode, message, data, error = "" } = responseData;
+            console.log(message, data);
+            if (statusCode === 200) {
+                navigate("/");
+                window.location.reload();
+            } else {
+                window.alert(error);
+            }
+        } else {
+            console.error("HTTP error:", response.status);
+            window.alert("Request failed with status: " + response.status);
+        }
+    } catch (e) {
+        console.error("Error occurred:", e);
+        window.alert("Something went wrong, please try again");
+    }
+};
+
 
   return (
     <div className='log-in'>
