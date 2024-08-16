@@ -1,33 +1,21 @@
-import React, {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {RouterProvider} from "react-router-dom";
-import appRoutes from './routes/app-routes';
-import authRoutes from './routes/auth-routes';
-import Login from './Components/Login/Login';
-import Header from './Components/Header';
-import './App.css';
-import Sidebar from './Components/Sidebar';
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { appRoutes, authRoutes } from './routes/app-routes';
+import { AuthProvider, useAuth } from './routes/AuthContext'; // Adjust import path
+
+function AppContent() {
+  const { token } = useAuth();
+
+  return (
+    <RouterProvider router={token ? appRoutes : authRoutes} />
+  );
+}
 
 function App() {
-
-  const [token, setToken] = useState(sessionStorage.getItem("token"))
-
-  useEffect(() => {
-if(sessionStorage.getItem("token")){
-  setToken(sessionStorage.getItem("token"))
-}
-  }, [])
-  console.log(token)
   return (
-  <div className="App">
-    
-    <div className="d-flex">
-
-      <div className={`content ${token ? 'flex-grow-1 pt-0' : 'w-100 h-100'}`}>
-      <RouterProvider  router={token ? appRoutes : authRoutes} />
-     </div>
-     </div>
-    </div>
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

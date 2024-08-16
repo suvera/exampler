@@ -1,0 +1,103 @@
+.table-container {
+    /* padding: 20px;
+    max-width: 1000px; */
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pending-exams-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  
+  .pending-exams-table th,
+  .pending-exams-table td {
+    padding: 12px 15px;
+  }
+ 
+  
+  .pending-exams-table th {
+    /* background-color: #f3f3f3; */
+    text-align: left;
+  }
+  
+  /* .pending-exams-table th:hover {
+    background-color: #e0e0e0;
+    color: #0000;
+  } */
+  
+  .pending-exams-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .pending-exams-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .pending-exams-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(51, 51, 51);
+  }
+  .pending-exams-table thead tr {
+    background-color:rgb(51, 51, 51) !important;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .start-exam-button {
+    background-color: #007bff;
+    max-width: 130px;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .start-exam-button:hover {
+    background-color: #136022;
+  }
+  
+  .search-input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .pagheadclass {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 10px 0;
+  }
+  
+  .pagination {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pagination button {
+    border: 1px solid #ddd;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .pagination button:disabled {
+    background-color: #dddddd;
+    cursor: not-allowed;
+  }
+  

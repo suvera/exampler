@@ -57,6 +57,9 @@ export const api = {
     endpoints: {
         auth: {
             login: BASE_URL + "/login",
+        },
+        exams: {
+            completed_exams: BASE_URL + "/exams/completed?offset=0&limit=20",
         }
     }
 
